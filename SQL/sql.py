@@ -40,5 +40,8 @@ df = pd.read_sql(query, con=conn, index_col='index_name')
 
 
 
-c.execute("UPDATE data SET A=218 WHERE index_name='b'")
+c.execute("UPDATE data SET A=218, B=250 WHERE index_name='b'")
+conn.commit()
+
+c.execute("DELETE FROM data WHERE index_name=1")
 conn.commit()
