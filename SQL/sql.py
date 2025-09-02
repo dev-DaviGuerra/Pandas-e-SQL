@@ -36,3 +36,9 @@ df = pd.DataFrame(c.fetchall())
 
 query = 'SELECT * FROM data'
 df = pd.read_sql(query, con=conn, index_col='index_name')
+
+
+
+
+c.execute("UPDATE data SET A=218 WHERE index_name='b'")
+conn.commit()
